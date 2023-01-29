@@ -1,0 +1,831 @@
+{
+	"info": {
+		"_postman_id": "4e18d066-b0e3-4e57-9990-3af50d4d8bad",
+		"name": "HW_2_user_info_2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24082840"
+	},
+	"item": [
+		{
+			"name": "вставить параметр salary из окружения в request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let salEnv = pm.environment.get(\"salary\");\r",
+							"pm.environment.set(\"salary\", \"100\")\r",
+							"\r",
+							"console.log('salary' +salEnv)\r",
+							"    "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "{{name}}",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "{{age}}",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "{{salary}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{ip_port}}/user_info_2",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"user_info_2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "вставить параметр age из окружения в age Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let ageEnv = pm.environment.get(\"age\");\r",
+							"pm.environment.get(\"age\")\r",
+							"\r",
+							"console.log('age' +ageEnv)\r",
+							"    "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "{{name}}",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "{{age}}",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "{{salary}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{ip_port}}/user_info_2",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"user_info_2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "вставить параметр name из окружения в name",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let nameEnv = pm.environment.get(\"name\");\r",
+							"pm.environment.get(\"name\")\r",
+							"\r",
+							"console.log('name' +nameEnv)\r",
+							"    "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Dasha",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "32",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "100",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{ip_port}}/user_info_2",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"user_info_2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "status code 200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"    "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Dasha",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "32",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "100",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{ip_port}}/user_info_2",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"user_info_2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "parse respone",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Спарсить response body в JSON\r",
+							"pm.test (\"Parse response body\")\r",
+							"var jsonData = pm.response.json();\r",
+							"\r",
+							"console.log(jsonData)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Dasha",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "32",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "100",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{ip_port}}/user_info_2",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"user_info_2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "parse request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Спарсить request body в JSON\r",
+							"pm.test (\"Parse request body\")\r",
+							"let req_f = request.data\r",
+							"\r",
+							"\r",
+							"console.log(req_f)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Dasha",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "32",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "100",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{ip_port}}/user_info_2",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"user_info_2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "проверить, что response json имеет параметр start_qa_salary",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Проверить, что json response имеет параметр start_qa_salary\r",
+							"let resp = pm.response.json()\r",
+							"  pm.test(\"response json to have start_qa_salary\", function() {\r",
+							"\r",
+							"  });\r",
+							"\r",
+							"\r",
+							"pm.expect(resp).to.have.any.keys(\"start_qa_salary\")\r",
+							"console.log(resp.start_qa_salary)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Dasha",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "32",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "100",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{ip_port}}/user_info_2",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"user_info_2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "проверить, что qa_salary _after_6_month = 2 salary_request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Проверить, что json response  qa_salary_after_6_months = salary request*2\r",
+							"let resp = pm.response.json()\r",
+							"let req_f = request.data.salary\r",
+							"\r",
+							"  pm.test(\"qa_salary_after_6_months = request salary*2\", function() {\r",
+							"pm.expect(req_f*2).to.eql(+resp.qa_salary_after_6_months);\r",
+							"  });\r",
+							"\r",
+							"console.log(req_f*2)==(+resp.qa_salary_after_6_months)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Dasha",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "32",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "100",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{ip_port}}/user_info_2",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"user_info_2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "проверить, что qa_salary _after_12_month = 2,7 salary_request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// проверить, что qa_salary _after_12_month = 2,7 salary_request\r",
+							"let resp = pm.response.json()\r",
+							"let req_f = request.data.salary\r",
+							"\r",
+							"  pm.test(\"qa_salary _after_12_month = 2,7 salary_request\", function() {\r",
+							"pm.expect(req_f*2.7).to.eql(+resp.qa_salary_after_12_months);\r",
+							"  });\r",
+							"\r",
+							"console.log(req_f*2.7)==(+resp.qa_salary_after_12_months)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Dasha",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "32",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "100",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{ip_port}}/user_info_2",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"user_info_2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "проверить, что qa_salary _after_1.5_year = 3.3 *salary_request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// проверить, что qa_salary _after_1.5_year = 3.3 salary_request\r",
+							"let resp = pm.response.json()\r",
+							"let req_f = request.data.salary\r",
+							"\r",
+							"  pm.test(\"qa_salary _after_1.5_year = 3.3 salary_request\", function() {\r",
+							"pm.expect(req_f*3.3).to.eql(+resp[\"qa_salary_after_1.5_year\"]);\r",
+							"  });\r",
+							"\r",
+							"console.log(req_f*3.3)==(+resp[\"qa_salary_after_1.5_year\"])"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Dasha",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "32",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "100",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{ip_port}}/user_info_2",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"user_info_2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "проверить, что qa_salary _after_3.5_years = 3.8 *salary_request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// проверить, что qa_salary _after_3.5_years = 3.8* salary_request\r",
+							"let resp = pm.response.json()\r",
+							"let req_f = request.data.salary\r",
+							"\r",
+							"  pm.test(\"qa_salary _after_3.5_years = 3.8* salary_request\", function() {\r",
+							"pm.expect(req_f*3.8).to.eql(+resp[\"qa_salary_after_3.5_years\"]);\r",
+							"  });\r",
+							"\r",
+							"console.log(req_f*3.8)==(+resp[\"qa_salary_after_3.5_years\"])"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Dasha",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "32",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "100",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{ip_port}}/user_info_2",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"user_info_2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "проверить, что в параметре person 1-й элемент из u_name равен salary из request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// проверить, что в параметре person 1-й элемент из u_name равен salary из request\r",
+							"let resp = pm.response.json()\r",
+							"let req_f = request.data.salary\r",
+							"\r",
+							"  pm.test(\"person 1-й элемент из u_name = salary из request\", function() {\r",
+							"pm.expect(+req_f).to.eql(resp.person.u_name[1]);\r",
+							"  });\r",
+							"console.log(+req_f)\r",
+							"console.log(+resp.person.u_name[1])\r",
+							"console.log(+req_f)==(+resp.person.u_name[1])"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Dasha",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "32",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "100",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{ip_port}}/user_info_2",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"user_info_2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "проверить, что u_salary_5_years = salary*4,2 из request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// проверить, что u_salary_5_years = salary*4,2 из request\r",
+							"let resp = pm.response.json()\r",
+							"let req_f = request.data.salary\r",
+							"\r",
+							"  pm.test(\"u_salary_5_years = salary*4,2 req\", function() {\r",
+							"pm.expect(+req_f*4.2).to.eql(+resp.person.u_salary_5_years);\r",
+							"  });\r",
+							"\r",
+							"console.log(+req_f*4.2)==(+resp.person.u_salary_5_years)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Dasha",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "32",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "100",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{ip_port}}/user_info_2",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"user_info_2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Цикл, который выводит в консоль по порядку элементы списка из параметра",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// проверить, что u_salary_5_years = salary*4,2 из request\r",
+							" let resp_f = pm.response.json();\r",
+							"    resp_person = resp_f.person;\r",
+							"    let obj_key = Object.keys(resp_person)\r",
+							"    let obj_val = Object.values(resp_person)\r",
+							"    let l = resp_person.length\r",
+							"  \r",
+							"   \r",
+							"    for(let i = 0; i < obj_val.length; i+=1)\r",
+							"    {\r",
+							"       console.log(obj_key[i], obj_val[i])\r",
+							"    }"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Dasha",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "32",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "100",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{ip_port}}/user_info_2",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"user_info_2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Цикл, который выводит в консоль по порядку элементы списка из параметра Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// проверить, что u_salary_5_years = salary*4,2 из request\r",
+							" let resp_f = pm.response.json();\r",
+							"    resp_person = resp_f.person;\r",
+							"   \r",
+							"\r",
+							"   \r",
+							"    for(let i in resp_person)\r",
+							"    {\r",
+							"       console.log(resp_person[i])\r",
+							"    }"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Dasha",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "32",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "100",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{ip_port}}/user_info_2",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"user_info_2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,242 @@
+{
+	"info": {
+		"_postman_id": "ed4cede6-efed-4c49-ac33-e3799ef3703d",
+		"name": "Collection1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24082840"
+	},
+	"item": [
+		{
+			"name": "{{ip_port}}/get_method\n",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ip_port}}/get_method\n?name=Dasha&age=32",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"get_method\n"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Dasha"
+						},
+						{
+							"key": "age",
+							"value": "32"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{ip_port}}/user_info_3 test",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Dasha",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "32",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "100000",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{ip_port}}/user_info_3",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"user_info_3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{ip_port}}/object_info_1\n?name=Dasha&age =32&weight=54",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{ip_port}}/object_info_1\n?name=Dasha&age=32&weight=54",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"object_info_1\n"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Dasha"
+						},
+						{
+							"key": "age",
+							"value": "32"
+						},
+						{
+							"key": "weight",
+							"value": "54"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{ip_port}}/object_info_2\n?name=Dasha&age =32&salary=200",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ip_port}}/object_info_2\n?name=Dasha&age=32&salary=100",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"object_info_2\n"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Dasha"
+						},
+						{
+							"key": "age",
+							"value": "32"
+						},
+						{
+							"key": "salary",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{ip_port}}/object_info_3\n?name=Dasha&age=32&salary=100",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ip_port}}/object_info_3\n?name=Dasha&age=32&salary=100",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"object_info_3\n"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Dasha"
+						},
+						{
+							"key": "age",
+							"value": "32"
+						},
+						{
+							"key": "salary",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "object_info_4",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ip_port}}/object_info_4?name=Dasha&age=32&salary=100",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"object_info_4"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Dasha"
+						},
+						{
+							"key": "age",
+							"value": "32"
+						},
+						{
+							"key": "salary",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{ip_port}}/user_info_3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Dasha",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "32",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "100000",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{ip_port}}/user_info_2",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"user_info_2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

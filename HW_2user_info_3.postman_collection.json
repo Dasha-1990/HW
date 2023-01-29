@@ -1,0 +1,728 @@
+{
+	"info": {
+		"_postman_id": "0d72efa7-99b0-49be-9a01-3234cc2dfadd",
+		"name": "HW_2user_info_3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24082840"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{ip_port}}/first",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"first"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "status code 200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Dasha",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "32",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "100",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{ip_port}}/user_info_3",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"user_info_3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{ip_port}}/user_info_3 name",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test (\"Name request=Name response\")\r",
+							"let req_f = request.data\r",
+							"let resp_f = pm.response.json();\r",
+							"let req_name = 'Dasha'\r",
+							"console.log(\"req_name = \" + req_name)\r",
+							"console.log(\"resp_name = \" + resp_f.name)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Dasha",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "32",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "100",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{ip_port}}/user_info_3",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"user_info_3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{ip_port}}/user_info_3 age",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test (\"Age request=Age response\")\r",
+							"let req_f = request.data\r",
+							"var resp_f = pm.response.json();\r",
+							"let req_age = 32\r",
+							"\r",
+							"console.log(req_f)\r",
+							"console.log(\"req_age = \" + req_age)\r",
+							"console.log(\"resp_age = \" + resp_f.age)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Dasha",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "32",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "100",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{ip_port}}/user_info_3",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"user_info_3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{ip_port}}/user_info_3 salary",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test (\"Salary request=Salary response\")\r",
+							"let req_f = request.data\r",
+							"var resp_f = pm.response.json();\r",
+							"let req_salary = 100\r",
+							"\r",
+							"console.log(req_f)\r",
+							"console.log(\"req_salary = \" + req_salary)\r",
+							"console.log(\"resp_salary = \" + resp_f.salary)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Dasha",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "32",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "100",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{ip_port}}/user_info_3",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"user_info_3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{ip_port}}/user_info_3 parse",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Спарсить response body в JSON\r",
+							"pm.test (\"Parse response body\")\r",
+							"let jsonData = pm.response.json();\r",
+							"\r",
+							"console.log(jsonData)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Dasha",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "32",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "100",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{ip_port}}/user_info_3",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"user_info_3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{ip_port}}/user_info_3 parse request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Спарсить request body в JSON\r",
+							"pm.test (\"Parse request body\")\r",
+							"let req_f = request.data\r",
+							"\r",
+							"\r",
+							"console.log(req_f)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Dasha",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "32",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "100",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{ip_port}}/user_info_3",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"user_info_3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{ip_port}}/user_info_3 name из реквест",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Name response = Name request (name забрать из request)\r",
+							"pm.test (\"Name response = Name request\")\r",
+							"let req_f = request.data\r",
+							"let resp_f = pm.response.json();\r",
+							"\r",
+							"let req_name = req_f.name\r",
+							"let resp_name = resp_f.name\r",
+							"pm.test(\"Check_age\", function () {\r",
+							"    pm.expect(req_age).to.eql(resp_age);\r",
+							"});\r",
+							"\r",
+							"console.log(req_f)\r",
+							"console.log(\"req_name = \" + req_name)\r",
+							"console.log(\"resp_name = \" + resp_name)\r",
+							"\r",
+							"console.log(\"resp_name = \" + typeof resp_name)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Dasha",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "32",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "100",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{ip_port}}/user_info_3",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"user_info_3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{ip_port}}/user_info_3 age=age из реквест",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Age response = Age request (age забрать из request)\r",
+							"pm.test (\"Age response = Age request\")\r",
+							"let req_f = request.data\r",
+							"let resp_f = pm.response.json();\r",
+							"\r",
+							"let req_age = +req_f.age\r",
+							"let resp_age = +resp_f.age\r",
+							"\r",
+							"console.log(req_f)\r",
+							"console.log(\"req_age = \" + req_age)\r",
+							"console.log(\"resp_age = \" + resp_age)\r",
+							"\r",
+							"console.log(\"resp_age = \" + typeof resp_age)\r",
+							"\r",
+							"\r",
+							"pm.test(\"Check_age\", function () {\r",
+							"    pm.expect(req_age).to.eql(resp_age);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Dasha",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "32",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "100",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{ip_port}}/user_info_3",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"user_info_3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{ip_port}}/user_info_3 salary=salaryиз реквест Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Salary response = Salary request (salary забрать из request)\r",
+							"pm.test (\"Salary response = Salary request\")\r",
+							"let req_f = request.data\r",
+							"let resp_f = pm.response.json();\r",
+							"\r",
+							"let req_salary = +req_f.salary\r",
+							"let resp_salary = +resp_f.salary\r",
+							"\r",
+							"console.log(req_f)\r",
+							"console.log(\"req_salary = \" + req_salary)\r",
+							"console.log(\"resp_salary = \" + resp_salary)\r",
+							"\r",
+							"console.log(\"resp_salary = \" + typeof resp_salary)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Dasha",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "32",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "100",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{ip_port}}/user_info_3",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"user_info_3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{ip_port}}/user_info_3 family из response",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Family (response)\r",
+							"pm.test ('Family')\r",
+							"    var jsonData = pm.response.json();\r",
+							"   \r",
+							"   console.log(jsonData);\r",
+							"   console.log(jsonData.family);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Dasha",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "32",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "100",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{ip_port}}/user_info_3",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"user_info_3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "req_salary=u_1_5_years_salary",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let req_f = request.data\r",
+							"let resp_f = pm.response.json();\r",
+							"let req_salary = +req_f.salary\r",
+							"let resp_salary_1_5_years = resp_f.family.u_salary_1_5_year\r",
+							"\r",
+							"\r",
+							"pm.test (\"u_salary_1_5_year=salary*4\", function ()\r",
+							"\r",
+							" {\r",
+							"    pm.expect(req_salary*4).to.eql(resp_salary_1_5_years);\r",
+							"});\r",
+							"\r",
+							"console.log(req_salary*4)==(resp_salary_1_5_years)\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Dasha",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "32",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "100",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{ip_port}}/user_info_3",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"user_info_3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "req_salary=u_1_5_years_salary Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let req_f = request.data\r",
+							"let resp_f = pm.response.json();\r",
+							"let req_salary = +req_f.salary\r",
+							"let resp_salary_1_5_years = resp_f.family.u_salary_1_5_year\r",
+							"\r",
+							"\r",
+							"pm.test (\"u_salary_1_5_year=salary*4\", function ()\r",
+							"\r",
+							" {\r",
+							"    pm.expect(req_salary*4).to.eql(resp_salary_1_5_years);\r",
+							"});\r",
+							"\r",
+							"console.log(req_salary*4)==(resp_salary_1_5_years)\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Dasha",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "32",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "100",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{ip_port}}/user_info_3",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"user_info_3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
