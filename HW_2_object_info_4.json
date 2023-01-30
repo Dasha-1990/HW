@@ -1,0 +1,869 @@
+{
+	"info": {
+		"_postman_id": "2f1541d9-7a3e-4425-a9b0-ea4f0f2a80d6",
+		"name": "HW_2_object_info_4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24082840"
+	},
+	"item": [
+		{
+			"name": "status code is 200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ip_port}}/object_info_4?name=Dasha&age=32&salary=100",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"object_info_4"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Dasha"
+						},
+						{
+							"key": "age",
+							"value": "32"
+						},
+						{
+							"key": "salary",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "parse response",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Спарсить response body в JSON\r",
+							"pm.test (\"Parse response body\")\r",
+							"let jsonData = pm.response.json();\r",
+							"\r",
+							"console.log(jsonData)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ip_port}}/object_info_4?name=Dasha&age=32&salary=100",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"object_info_4"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Dasha"
+						},
+						{
+							"key": "age",
+							"value": "32"
+						},
+						{
+							"key": "salary",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "parse request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Спарсить request body в JSON\r",
+							"pm.test (\"Parse request body\")\r",
+							"let req = pm.request.url.query.toObject();\r",
+							"\r",
+							"console.log(req)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ip_port}}/object_info_4?name=Dasha&age=32&salary=100",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"object_info_4"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Dasha"
+						},
+						{
+							"key": "age",
+							"value": "32"
+						},
+						{
+							"key": "salary",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "name resp = name req (забрать из req)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Name response = Name request (name забрать из request)\r",
+							"\r",
+							"let req_f = pm.request.url.query.get(\"name\")\r",
+							"let resp_f = pm.response.json();\r",
+							"\r",
+							"let req_name = req_f\r",
+							"let resp_name = resp_f.name\r",
+							"\r",
+							"console.log(\"req_name = \" + req_name)\r",
+							"console.log(\"resp_name = \" + resp_name)\r",
+							"pm.test(\"Check name=name\", function () {\r",
+							"    \r",
+							"    pm.expect(req_name).to.eql(resp_name);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ip_port}}/object_info_4?name=Dasha&age=32&salary=100",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"object_info_4"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Dasha"
+						},
+						{
+							"key": "age",
+							"value": "32"
+						},
+						{
+							"key": "salary",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Age resp = age req (забрать из req)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Age response = Age request (Age забрать из request)\r",
+							"\r",
+							"let req_f = pm.request.url.query.get(\"age\")\r",
+							"let resp_f = pm.response.json();\r",
+							"\r",
+							"let req_age = +req_f\r",
+							"let resp_age = resp_f.age\r",
+							"\r",
+							"console.log(\"req_age = \" + req_age)\r",
+							"console.log(\"resp_age = \" + resp_age)\r",
+							"\r",
+							"pm.test(\"Check age=age\", function () {\r",
+							"    \r",
+							"    pm.expect(req_age).to.eql(resp_age);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ip_port}}/object_info_4?name=Dasha&age=32&salary=100",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"object_info_4"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Dasha"
+						},
+						{
+							"key": "age",
+							"value": "32"
+						},
+						{
+							"key": "salary",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "вывести в консоль salary из request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Salary забрать из request в консоль\r",
+							"let req_f = pm.request.url.query.get(\"salary\");\r",
+							"console.log(req_f)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ip_port}}/object_info_4?name=Dasha&age=32&salary=100",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"object_info_4"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Dasha"
+						},
+						{
+							"key": "age",
+							"value": "32"
+						},
+						{
+							"key": "salary",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "вывести в консоль salary из request Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Salary из response\r",
+							"let resp = pm.response.json();\r",
+							"let salary = resp.salary;\r",
+							"console.log(salary)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ip_port}}/object_info_4?name=Dasha&age=32&salary=100",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"object_info_4"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Dasha"
+						},
+						{
+							"key": "age",
+							"value": "32"
+						},
+						{
+							"key": "salary",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "вывести в консоль 0 параметр salary из response",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Salary (response)\r",
+							"\r",
+							"    var jsonData = pm.response.json();\r",
+							"   \r",
+							"   console.log(jsonData.salary[0]);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ip_port}}/object_info_4?name=Dasha&age=32&salary=100",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"object_info_4"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Dasha"
+						},
+						{
+							"key": "age",
+							"value": "32"
+						},
+						{
+							"key": "salary",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "вывести в консоль 1 параметр salary из response",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Salary response = Salary request (Salary забрать из request)\r",
+							"\r",
+							"    var jsonData = pm.response.json();\r",
+							"   \r",
+							"   console.log(jsonData.salary[1]);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ip_port}}/object_info_4?name=Dasha&age=32&salary=100",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"object_info_4"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Dasha"
+						},
+						{
+							"key": "age",
+							"value": "32"
+						},
+						{
+							"key": "salary",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "вывести в консоль 2 параметр salary из response",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"    var jsonData = pm.response.json();\r",
+							"   \r",
+							"   console.log(jsonData.salary[2]);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ip_port}}/object_info_4?name=Dasha&age=32&salary=100",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"object_info_4"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Dasha"
+						},
+						{
+							"key": "age",
+							"value": "32"
+						},
+						{
+							"key": "salary",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "0 параметр salary = salary request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Параметр 0 salary из response = salary из request\r",
+							"\r",
+							"let req_f = pm.request.url.query.get(\"salary\")\r",
+							"let resp_f = pm.response.json();\r",
+							"\r",
+							"let req_salary = +req_f\r",
+							"let resp_salary = resp_f.salary\r",
+							"\r",
+							"console.log(\"req_salary = \" + req_salary)\r",
+							"console.log(\"resp_salary = \" + resp_salary)\r",
+							"\r",
+							"pm.test(\"Check salary=salary[0]\", function () {\r",
+							"    \r",
+							"    pm.expect(req_salary).to.eql(resp_salary[0]);\r",
+							"});\r",
+							"console.log(req_salary)==(+resp_salary[0])"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "dasha",
+							"value": "100",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{ip_port}}/object_info_4?name=Dasha&age=32&salary=100",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"object_info_4"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Dasha"
+						},
+						{
+							"key": "age",
+							"value": "32"
+						},
+						{
+							"key": "salary",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1 параметр salary = salary*2 request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Параметр 1 salary из response = salary из request\r",
+							"\r",
+							"let req_f = pm.request.url.query.get(\"salary\")\r",
+							"let resp_f = pm.response.json();\r",
+							"\r",
+							"let req_salary = +req_f\r",
+							"let resp_salary = resp_f.salary\r",
+							"\r",
+							"console.log(\"req_salary = \" + req_salary)\r",
+							"console.log(\"resp_salary = \" + resp_salary)\r",
+							"\r",
+							"pm.test(\"Check salary=salary[1]\", function () {\r",
+							"    \r",
+							"    pm.expect(req_salary*2).to.eql(+resp_salary[1]);\r",
+							"});\r",
+							"console.log(req_salary*2)==(+resp_salary[1])\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ip_port}}/object_info_4?name=Dasha&age=32&salary=100",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"object_info_4"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Dasha"
+						},
+						{
+							"key": "age",
+							"value": "32"
+						},
+						{
+							"key": "salary",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2 параметр salary = salary*3 request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Параметр 2 salary из response = salary из request\r",
+							"\r",
+							" let req_f = pm.request.url.query.get(\"salary\")\r",
+							"let resp_f = pm.response.json();\r",
+							"\r",
+							"let req_salary = +req_f\r",
+							"let resp_salary = resp_f.salary\r",
+							"\r",
+							"console.log(\"req_salary = \" + req_salary)\r",
+							"console.log(\"resp_salary = \" + resp_salary)\r",
+							"\r",
+							"pm.test(\"Check salary=salary[2]\", function () {\r",
+							"    \r",
+							"    pm.expect(req_salary*3).to.eql(+resp_salary[2]);\r",
+							"});\r",
+							"console.log(req_salary*3)==(+resp_salary[2])"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ip_port}}/object_info_4?name=Dasha&age=32&salary=100",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"object_info_4"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Dasha"
+						},
+						{
+							"key": "age",
+							"value": "32"
+						},
+						{
+							"key": "salary",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "передать name в окружение",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Передать name в окружение\r",
+							"      let jsonData = pm.response.json();\r",
+							"    pm.environment.set(\"name\", \"Dasha\" );\r",
+							"  \r",
+							"    \r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ip_port}}/object_info_4?name=Dasha&age=32&salary=100",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"object_info_4"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Dasha"
+						},
+						{
+							"key": "age",
+							"value": "32"
+						},
+						{
+							"key": "salary",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "передать age в окружение",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Передать age в окружение\r",
+							"pm.environment.get(\"age\", 32);\r",
+							"    \r",
+							"    let jsonData = pm.response.json();\r",
+							"    pm.environment.set(\"age\", jsonData.age);\r",
+							"  \r",
+							"    console.log(jsonData.age)\r",
+							"    pm.environment.get(\"variable_key\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ip_port}}/object_info_4?name=Dasha&age=32&salary=100",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"object_info_4"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Dasha"
+						},
+						{
+							"key": "age",
+							"value": "32"
+						},
+						{
+							"key": "salary",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "передать salary в окружение",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Передать salary в окружение\r",
+							"\r",
+							"    let jsonData = pm.response.json();\r",
+							"    pm.environment.set(\"salary\", \"100\");\r",
+							"  \r",
+							"    "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ip_port}}/object_info_4?name=Dasha&age=32&salary=100",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"object_info_4"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Dasha"
+						},
+						{
+							"key": "age",
+							"value": "32"
+						},
+						{
+							"key": "salary",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "цикл, который выведет из списка по порядку элементы параметра salary",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Цикл, который выведет все элементы списка параметра salary\r",
+							"\r",
+							"    let resp_f = pm.response.json();\r",
+							"    resp_salary = resp_f.salary;\r",
+							"   \r",
+							"    let l = resp_salary.length\r",
+							"  console.log(l)\r",
+							"   \r",
+							"  for (let i = 0; i < l; i++) {\r",
+							"      console.log(resp_salary[i])\r",
+							"  }\r",
+							"   "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ip_port}}/object_info_4?name=Dasha&age=32&salary=100",
+					"host": [
+						"{{ip_port}}"
+					],
+					"path": [
+						"object_info_4"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Dasha"
+						},
+						{
+							"key": "age",
+							"value": "32"
+						},
+						{
+							"key": "salary",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
