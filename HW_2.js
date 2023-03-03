@@ -17,23 +17,23 @@
 //{"name":И,
  //"surname":Ф,
  //"middlename":О}
-  function f3(p1,p2,p3) {  
+//   function f3(p1,p2,p3) {  
     
-    let result =
-    ({name:p1,
-      surname:p2,
-      middlename:p3})
-    //let result_2 = JSON.stringify(result)
+//     let result =
+//     ({name:p1,
+//       surname:p2,
+//       middlename:p3})
+//     //let result_2 = JSON.stringify(result)
      
-     console.log(JSON.stringify(result,false,4))
+//      console.log(JSON.stringify(result,false,4))
     
-     return result
-   }
+//      return result
+//    }
 
-   let a = 'И'
-   let b = 'Ф'
-   let c = 'О' 
-let m = f3(a,b,c)
+//    let a = 'И'
+//    let b = 'Ф'
+//    let c = 'О' 
+// let m = f3(a,b,c)
 
 
 //4 задание
@@ -64,25 +64,85 @@ let m = f3(a,b,c)
 // в нее слове. Алфавит Eng. Если нет букв 'a', то вернуть текст
 // 'No a characters'
 
-      
+// function fun(Q) { 
 
-// let str = 'Harry';
-//  {
-// let count = [...str].filter(x => x === 'a').length;
-//  if (count >=1) 
-//  {
-//   console.log(count);
-//   return count
-//  }
-//  if (count < 1)
-//  {
-//   console.log('No a characters')
-//   return('No a characters')
+  // let str = 'Harry';
+function fun(str) {
+   let count = [...str].filter(x => x === 'a').length;
+ if (count >=1) 
+ {
+  console.log(count);
+  return count
+ }
+ if (count < 1)
+ {
+  console.log('No a characters')
+  return('No a characters')
   
-//   }
-//  }
+  }
+ }
+ 
+
+let m = fun('Harry')
+
 
 ///////Задание 6 ///////
 //Написать функцию, которая выдаст список тестов для переданного в неё web-ui элемента
 //Элементы: Phone number field, CheckBox, Signln Button
 
+
+
+function getTestsForElement(element) {
+  let tests = [];
+
+  switch (element.type) {
+    case 'phoneNumber':
+
+      tests.push({
+        name: 'Check if phone number is valid',
+
+        code: `
+
+          // code to check if phone number is valid
+
+        `
+
+      });
+
+      break;
+
+    case 'checkbox':
+
+      tests.push({
+        name: 'Check if checkbox is checked',
+
+        code: `
+
+          // code to check if checkbox is checked
+
+        `
+
+      });
+
+      break;
+
+    case 'signInButton':
+
+      tests.push({
+        name: 'Check if sign in button works',
+
+        code: `
+
+          // code to check if sign in button works
+
+        `
+
+      });
+
+      break;
+
+  }
+
+  return tests;
+
+}
